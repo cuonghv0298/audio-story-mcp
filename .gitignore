@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+runs/
+audio-story-runs/
+*.tmp
+*.tmp.wav
+.env
+.DS_Store

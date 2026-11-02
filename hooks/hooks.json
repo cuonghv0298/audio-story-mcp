@@ -1,0 +1,17 @@
+{
+  "description": "audio-story: mở phiên → nhắc nếu VieNeu-TTS / ffmpeg chưa sẵn sàng. Lần đầu (chưa có venv) thì im lặng.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -d \"${CLAUDE_PLUGIN_DATA}/.venv\" ] && UV_PROJECT_ENVIRONMENT=\"${CLAUDE_PLUGIN_DATA}/.venv\" uv run --quiet --project \"${CLAUDE_PLUGIN_ROOT}\" audio-story doctor --hook 2>/dev/null || true",
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  }
+}

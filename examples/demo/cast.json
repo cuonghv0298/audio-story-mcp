@@ -1,0 +1,8 @@
+{
+  "narrator": { "voice": "Quỳnh Anh" },
+  "characters": [
+    { "id": "c1", "old_names": ["Minh"], "new_name": "Khoa", "gender": "nam", "note": "nhân vật chính, người chèo đò" },
+    { "id": "c2", "old_names": [], "new_name": "bà cụ áo nâu", "gender": "nữ", "note": "bà lão xin trú" }
+  ],
+  "other_names": [ { "old_names": ["Bến Đá"], "new_name": "Vạn Liễu" } ]
+}

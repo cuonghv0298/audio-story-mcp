@@ -1,0 +1,10 @@
+{
+  "title": "Chiếc mái chèo trầm hương",
+  "segments": [
+    { "id": 1, "chapter": "Phần 1", "text": "Ở làng chài Vạn Liễu, ai cũng biết Khoa, cậu lái đò ít nói nhưng chưa từng từ chối chở ai qua sông, kể cả lúc nửa đêm." },
+    { "id": 2, "text": "Mùa nước lũ năm ấy, giữa cơn giông, một bà cụ áo nâu run rẩy đứng dưới mái hiên nhà cậu.", "pause_after_ms": 600 },
+    { "id": 3, "text": "Khoa trải tấm chăn duy nhất cho bà, còn mình thức trắng giữ cho bếp than không tắt." },
+    { "id": 4, "chapter": "Phần 2", "text": "Gà vừa gáy, căn nhà đã trống. Bên bậc cửa chỉ còn một mái chèo thơm mùi trầm, vân gỗ óng như mật ong.", "pause_after_ms": 800 },
+    { "id": 5, "text": "Từ hôm đó, hễ Khoa cầm mái chèo, dòng sông dữ nhất cũng lặng đi, như đang nhường đường cho người tốt bụng." }
+  ]
+}

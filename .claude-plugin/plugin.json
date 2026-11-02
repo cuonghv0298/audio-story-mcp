@@ -1,0 +1,20 @@
+{
+  "name": "audio-story",
+  "displayName": "Audio Story",
+  "version": "0.1.0",
+  "description": "Từ link YouTube truyện audio → chép lời → Claude đổi tên nhân vật, viết lại tình tiết → một giọng thuyết minh tiếng Việt (VieNeu-TTS) → mp3.",
+  "author": {
+    "name": "cuonghv0298"
+  },
+  "repository": "https://github.com/cuonghv0298/audio-story-mcp",
+  "homepage": "https://github.com/cuonghv0298/audio-story-mcp",
+  "keywords": [
+    "mcp",
+    "audio-story",
+    "tts",
+    "vietnamese",
+    "youtube",
+    "vieneu"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,38 @@
+[project]
+name = "audio-story-mcp"
+version = "0.1.0"
+description = "MCP server + Claude Code plugin: YouTube audio story -> rewritten script -> multi-voice Vietnamese TTS (VieNeu)."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=2.0.0",
+    "pydantic>=2.7",
+    "httpx>=0.27",
+    "yt-dlp>=2025.1.1",
+    "imageio-ffmpeg>=0.5",
+]
+
+[project.optional-dependencies]
+whisper = ["faster-whisper>=1.1"]
+
+[project.scripts]
+audio-story-mcp = "audio_story.server:main"
+audio-story = "audio_story.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/audio_story"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
