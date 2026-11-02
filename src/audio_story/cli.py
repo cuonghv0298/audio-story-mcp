@@ -3,6 +3,7 @@
     audio-story doctor [--hook]
     audio-story fetch <url|file> [--title T] [--no-audio]
     audio-story transcribe <run> [--engine auto|captions|text|openai|whisper]
+    audio-story chapters <run>
     audio-story check <run>
     audio-story voices
     audio-story preview "<câu>" --voice "<giọng>" [--run <run>]
@@ -20,7 +21,7 @@ import shutil
 import sys
 from typing import Any
 
-from . import __version__, assemble, media, qa, runs, script, stt, tts
+from . import __version__, assemble, chapters, media, qa, runs, script, stt, tts
 from . import source as source_mod
 
 
@@ -61,6 +62,8 @@ def main(argv: list[str] | None = None) -> int:
     t = sub.add_parser("transcribe")
     t.add_argument("run")
     t.add_argument("--engine", default="auto", choices=stt.ENGINES)
+    sc = sub.add_parser("chapters")
+    sc.add_argument("run")
     c = sub.add_parser("check")
     c.add_argument("run")
     sub.add_parser("voices")
@@ -103,6 +106,8 @@ def main(argv: list[str] | None = None) -> int:
             _print(source_mod.fetch(args.source, title=args.title, with_audio=not args.no_audio))
         elif args.cmd == "transcribe":
             _print(stt.transcribe(runs.resolve(args.run), args.engine))
+        elif args.cmd == "chapters":
+            _print(chapters.split(runs.resolve(args.run)))
         elif args.cmd == "check":
             p = runs.resolve(args.run)
             try:

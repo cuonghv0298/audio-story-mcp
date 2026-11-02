@@ -48,6 +48,7 @@ Mọi file nằm trong thư mục run `./audio-story-runs/<slug>-<ngày>-<id>/` 
 |---|---|
 | `fetch_source` | Link YouTube (audio + metadata + phụ đề vi) hoặc file audio/.vtt/.srt/.txt → run mới |
 | `transcribe` | `captions` · `text` · `openai` · `whisper` · `auto` → `transcript/transcript.txt` |
+| `split_chapters` | Tách transcript dài theo «Chương N» → `transcript/chapters/chuong-XXXX.txt` |
 | `run_status` · `list_runs` | Run đang ở bước nào |
 | `check_script` | Kiểm `cast.json` + `script.json`: sót tên gốc (cả không dấu), thiếu giọng, đoạn rỗng; cảnh báo % trùng bản gốc, đoạn quá dài |
 | `list_voices` · `tts_preview` | 25 giọng VieNeu, nghe thử một câu |
@@ -62,6 +63,7 @@ Mọi file nằm trong thư mục run `./audio-story-runs/<slug>-<ngày>-<id>/` 
 uv run audio-story doctor
 uv run audio-story fetch <url|file>
 uv run audio-story transcribe <run> --engine whisper
+uv run audio-story chapters <run>
 uv run audio-story check <run>
 uv run audio-story render <run> [--limit 3]
 uv run audio-story assemble <run>

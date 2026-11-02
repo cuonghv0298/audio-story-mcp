@@ -8,7 +8,7 @@ from mcp.server.mcpserver.exceptions import ToolError
 from audio_story import server
 
 EXPECTED = {"fetch_source", "transcribe", "run_status", "list_runs", "check_script", "list_voices", "tts_preview",
-            "tts_render", "qa_audio", "assemble_audio", "doctor"}
+            "tts_render", "qa_audio", "assemble_audio", "doctor", "split_chapters"}
 
 
 def test_tools_registered():
