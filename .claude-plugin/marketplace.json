@@ -1,0 +1,11 @@
+{
+  "name": "audio-story",
+  "owner": { "name": "cuonghv0298" },
+  "plugins": [
+    {
+      "name": "audio-story",
+      "source": "./",
+      "description": "MCP server + skill: YouTube truyện audio → kịch bản mới (đổi tên, viết lại) → TTS tiếng Việt một giọng thuyết minh."
+    }
+  ]
+}
