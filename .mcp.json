@@ -3,11 +3,11 @@
     "audio-story": {
       "type": "stdio",
       "command": "uv",
-      "args": ["run", "--quiet", "--project", "${CLAUDE_PLUGIN_ROOT:-.}", "audio-story-mcp"],
-      "env": {
-        "UV_PROJECT_ENVIRONMENT": "${CLAUDE_PLUGIN_DATA:-.}/.venv",
-        "VIENEU_URL": "${VIENEU_URL:-http://127.0.0.1:8165}"
-      }
+      "args": [
+        "run",
+        "--quiet",
+        "audio-story-mcp"
+      ]
     }
   }
 }

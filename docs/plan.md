@@ -108,6 +108,7 @@ audio-story-runs/<slug>-<YYYY-MM-DD>-<id>/      # gốc = $AUDIO_STORY_RUNS_DIR,
 |---|---|---|
 | `fetch_source` | url hoặc đường dẫn file → run mới | yt-dlp `bestaudio`, phụ đề `vi` (thủ công trước, tự động sau); file `.txt/.md` = transcript sẵn |
 | `transcribe` | run, engine → `transcript/` | `auto`: phụ đề → OpenAI (nếu có key) → whisper (nếu cài) |
+| `split_chapters` | run → `transcript/chapters/` | tách theo «Chương N» (số tăng dần); thêm 02/11 sau test trong Claude Code |
 | `run_status` | run → trạng thái, file đã có, bước kế | để skill biết đang ở đâu |
 | `check_script` | run → `script/check.json` | lỗi (chặn TTS) và cảnh báo |
 | `list_voices` | → giọng VieNeu | từ `GET /v1/voices` |

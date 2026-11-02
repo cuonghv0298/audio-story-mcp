@@ -38,7 +38,11 @@ phụ đề tiếng Việt không.
 
 ## 3 · Đọc hiểu → story bible
 
-Đọc `transcript/transcript.txt` **theo phần** (Read với offset/limit nếu dài). Ghi `story/story_bible.json`:
+Truyện dài (> ~15.000 ký tự) hoặc người dùng chỉ muốn vài chương: gọi `split_chapters(run)` → mỗi chương một file
+`transcript/chapters/chuong-XXXX.txt` (kèm số ký tự, mốc thời gian, ước lượng phút audio). Đọc đúng file chương cần làm
+bằng Read — **không** tự viết script Python/Bash để cắt transcript. Báo người dùng số chương và độ dài ước lượng.
+
+Đọc transcript (hoặc file chương) **theo phần** (Read với offset/limit nếu dài). Ghi `story/story_bible.json`:
 
 ```json
 { "title_goc": "…", "the_loai": "tiên hiệp | ma | ngôn tình | đời thường …", "boi_canh": "…",
@@ -94,7 +98,8 @@ Cách viết cho TTS (quan trọng):
 dạng không dấu), `voice_missing`, `empty_text`, `schema`. Cảnh báo `high_overlap`: viết lại các đoạn trong
 `stats.most_similar_segments` rồi kiểm lại.
 
-Chọn giọng thuyết minh: `list_voices` → gợi ý 2–3 giọng hợp thể loại (giọng có «đọc truyện / kể chuyện»: Quỳnh Anh, Mỹ
+Chọn giọng thuyết minh: **mặc định `Quỳnh Anh`** (nữ miền Bắc, đọc truyện — anh chọn 02/11/2026); chỉ đổi khi người
+dùng yêu cầu. Muốn so giọng: `list_voices` → gợi ý 2–3 giọng hợp thể loại (giọng có «đọc truyện / kể chuyện»: Quỳnh Anh, Mỹ
 Duyên, Kim Thanh, Ngọc Linh, Thục Đoan, Đức Trí, Thanh Bình, Thiện Minh, Thái Sơn…) → `tts_preview` đoạn mở đầu với từng
 giọng → đưa đường dẫn file cho người dùng nghe → ghi `narrator.voice` → `check_script` lại.
 

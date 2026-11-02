@@ -16,5 +16,21 @@
     "youtube",
     "vieneu"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "mcpServers": {
+    "audio-story": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--quiet",
+        "--project",
+        "${CLAUDE_PLUGIN_ROOT}",
+        "audio-story-mcp"
+      ],
+      "env": {
+        "UV_PROJECT_ENVIRONMENT": "${CLAUDE_PLUGIN_DATA}/.venv"
+      }
+    }
+  }
 }

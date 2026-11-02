@@ -14,7 +14,7 @@ from mcp.server.mcpserver import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from pydantic import ValidationError
 
-from . import __version__, assemble, qa, runs, script, stt, tts
+from . import __version__, assemble, chapters, qa, runs, script, stt, tts
 from . import source as source_mod
 
 INSTRUCTIONS = """Tool cho quy trình truyện audio: link YouTube → transcript → (Claude viết story_bible, cast, script) →
@@ -51,6 +51,13 @@ def transcribe(run: str, engine: str = "auto", language: str = "vi") -> dict[str
     engine: auto | captions (phụ đề YouTube) | text (file .txt có sẵn) | openai (cần OPENAI_API_KEY) |
     whisper (faster-whisper tại máy). Sau đó đọc transcript.txt bằng công cụ đọc file (có thể dài — đọc theo phần)."""
     return stt.transcribe(runs.resolve(run), engine, language=language)
+
+
+@_tool
+def split_chapters(run: str) -> dict[str, Any]:
+    """Tách transcript dài thành từng chương theo mốc «Chương <số>» → transcript/chapters/chuong-XXXX.txt (kèm số ký
+    tự, mốc thời gian, ước lượng phút audio). Dùng khi truyện dài nhiều chương: đọc/viết lại từng chương thay vì cả file."""
+    return chapters.split(runs.resolve(run))
 
 
 @_tool
